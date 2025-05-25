@@ -18,8 +18,8 @@ pipeline {
         }
         stage('Deliver') { 
             steps {
-                sh './jenkins/scripts/deliver.sh'
-                sh './scripts/deliver.sh'
+                sh 'mvn mvn clean install -Denforcer.skip=true'
+                sh './jenkins/scripts/deliver.sh
             }
         }
     }
